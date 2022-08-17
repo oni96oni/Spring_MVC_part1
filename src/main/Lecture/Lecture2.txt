@@ -60,4 +60,50 @@
         파라미터이름이 중복일때는 getParameterValues()사용
 
     HTTP 요청 데이터 - POST HTML Form
+        HTML의 Form을 사용해서 클라이언트에서 서버로 데이터를 전송해보자.
+        우리가 전송버튼을 누르면 웹 브라우저가 요청 HTTP 메시지를 만들어서 서버에 전달한다.
+        POST도 쿼리파라미터이기 때문에 getParameter로 get,post둘다 조회 가능하다.
+        쿼리파라미터 조회 메서드를 그대로 사용하면 된다!
+
+        간단한 테스트할때 폼만들필요없이 postman사용하면 된다.
+
+        get이든 post이든 form형식으로 보내든 쿼리파라미터 형식으로 보내면 다 동일하게 자료를 다룰 수 있다.
+
+    HTTP 요청 데이터 - API 메시지 바디 - 단순 텍스트
+        HTTP message body에 데이터를 직접 담아서 요청하는것!
+        주로 JSON으로 통일
+        PUT, PATCH, POST
+
+        InputStream으로 데이터를 읽을 수 있다.
+        하지만 보통 이렇게 문자(단순 TEXT)로 주고 받지는 않는다!
+
+    HTTP 요청 데이터 - API 메시지 바디 - JSON
+        HTTP API에서 주로 사용하는 JSON형식으로 데이터 전달
+        JSON도 결국 문자이다.
+
+    HttpServletResponse - 기본 사용법
+        1. HTTP 응답 메시지 생성하는 역할! 우리 대신에 생성해준다
+
+        2. 편의 기능 제공
+            Content-Type, 쿠키, Redirect
+
+    HTTP 응답 데이터 - 단순 텍스트, HTML
+        요청과 비슷하게 크게 3가지로 나뉜다.
+        1. 단순 텍스트 응답
+        2. HTML 응답
+        3. HTTP API - MessageBody JSON 응답
+
+        웹브라우저가 제대로 렌더링을 하면 자바코드를 html로 바꿔서 띄워준다.
+
+    HTTP 응답 데이터 - API JSON
+        HTTP API를 만들때 주로 사용하는 API JSON 사용연습
+
+    정리
+        HTTP 요청 메시지의 스펙을 편리하게 조회하고 사용할 수 있는것이 HttpServletRequest 이다. + 각종 편리한 기능 제공 startline + header + body 등등
+        클라이언트에서 서버로 핵심(데이터)를 보낼때는 크게 3가지 방법을 사용한다. GET, POST, HTTP message body
+        사실 get, post는 서버에서 읽을때 양식이 똑같이 읽는다.
+
+        form데이터를 전송할때는 post만! put, patch는 안된다.
+
+
 
